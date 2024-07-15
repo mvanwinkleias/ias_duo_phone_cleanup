@@ -14,7 +14,10 @@ import time
 from datetime import datetime, timedelta
 
 config = configparser.ConfigParser()
-config.read('credentials.ini')
+# config.read('credentials.ini')
+config.read(
+	os.path.expanduser('~/.config/IAS/ias-duo-phone-cleanup/credentials.ini')
+)
 
 # Configuration and information about objects to create.
 admin_api = duo_client.Admin(
